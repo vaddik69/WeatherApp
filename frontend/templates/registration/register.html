@@ -1,0 +1,19 @@
+{% extends "frontend/base.html" %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+    <form action="." method="post" class="p-3 mt-3">
+        {% csrf_token %}
+        <div>
+        {% for field in user_form %}
+            {{field.label_tag}}
+        <div class="form-field d-flex align-items-center">
+            <div>{{field}}</div>
+        </div>
+        {% endfor %}
+        </div>
+        {{ form.errors }}
+        <p><input type="submit" value="Sign up" class="btn mt-3"></p>
+    </form>
+{% endblock %}

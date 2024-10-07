@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{%  load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <script type="text/javascript" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center">
+
+             <div class="card">
+
+              <div class="upper">
+
+                <img src="https://i.imgur.com/Qtrsrk5.jpg" class="img-fluid">
+
+             </div>
+
+              <div class="user text-center">
+
+                <div class="profile">
+
+                  <img src="https://static.wikia.nocookie.net/amnom/images/3/3b/%D0%90%D0%BC_%D0%9D%D1%8F%D0%BC.png/revision/latest?cb=20130522104609&path-prefix=ru" class="rounded-circle" width="80">
+
+                </div>
+
+              </div>
+
+
+              <div class="mt-5 text-center">
+
+                <h4 class="mb-0">{{ user.username }}</h4>
+
+              </div>
+
+                 <div class="mt-5 text-left">
+                     <h5 class="mb-0">Имя: {{ user.first_name }}</h5>
+                     <h5 class="mb-0">Почта: {{ user.email }}</h5>
+                 </div>
+
+                 <div class="mt-5 text-center">
+                <button class="btn btn-primary btn-sm follow" onclick="location.href='{% url 'logout' %}?next=/profile'">Logout</button>
+
+                  <button class="btn btn-primary btn-sm follow" onclick="location.href='http://localhost:8000/home/'">Weather</button>
+
+                </div>
+              </div>
+
+           </div>
+<script src="{% static 'frontend/main.js' %}"></script>
+</body>
+</html>
